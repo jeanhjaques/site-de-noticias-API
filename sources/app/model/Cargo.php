@@ -1,17 +1,17 @@
 <?php 
 class Cargo{
     //attributes
-    private $idCargo;
+    private $idcargo;
     private $nome;
     private $nivelAcesso;
 
     //getters e setters
-    public function getIdCargo(){
-        return $this->idCargo;
+    public function getIdcargo(){
+        return $this->idcargo;
     }
 
-    public function setIdCargo($idCargo){
-        $this->idCargo = $idCargo;
+    public function setIdcargo($idcargo){
+        $this->idcargo = $idcargo;
     }
 
     public function getNome(){
