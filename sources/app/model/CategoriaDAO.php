@@ -1,26 +1,23 @@
 <?php
-include_once "Cargo.php";
+include_once "Categoria.php";
 include_once "Conexao.php";
 
-class CargoDAO{
-    public static function create(Cargo $cargo){
-        $sql = 'INSERT INTO Cargo (nome, nivelacesso) VALUES(?, ?)';
+class CategoriaDAO{
+    public static function create(Categoria $categoria){
+        $sql = 'INSET INTO categoria(nome) VALUES (?)';
 
         $stmt = Conexao::getConnect()->prepare($sql);
 
-        $stmt->bindValue(1, $cargo->getNome());
-        $stmt->bindValue(2, $cargo->getNivelacesso());
+        $stmt->bindValue(1, $categoria->getNome());
 
         $stmt->execute();
     }
-
     public static function read(){
-        $sql = 'SELECT * FROM Cargo';
+        $sql = 'SELECT * FROM categoria';
 
         $stmt = Conexao::getConnect()->prepare($sql);
-
         $stmt->execute();
-        
+
         if($stmt->rowCount()>0){
             $stmt->setFetchMode(PDO::FETCH_CLASS, "Categoria");
             $obj = $stmt->fetchAll(); 
@@ -31,20 +28,19 @@ class CargoDAO{
         }
     }
 
-    public static function update(Cargo $cargo){
-        $sql = 'UPDATE Cargo SET nome = ?, nivelAcesso = ? WHERE idcargo = ?';
+    public static function update(Categoria $categoria){
+        $sql = 'UPDATE categoria SET nome = ? WHERE idcategoria = ?';
 
         $stmt = Conexao::getConnect()->prepare($sql);
 
-        $stmt->bindValue(1, $cargo->getNome());
-        $stmt->bindValue(2, $cargo->getNivelacesso());
-        $stmt->bindValue(3, $cargo->getIdcargo());
+        $stmt->bindValue(1, $categoria->getNome());
+        $stmt->bindValue(2, $categoria->getIdcategoria());
 
         $stmt->execute();
-    }
 
+    }
     public static function delete($id){
-        $sql = 'DELETE FROM Cargo WHERE idcargo = ?';
+        $sql = 'DELETE FROM categoria WHERE idcategoria = ?';
 
         $stmt = Conexao::getConnect()->prepare($sql);
 
@@ -52,4 +48,5 @@ class CargoDAO{
 
         $stmt->execute();
     }
+
 }

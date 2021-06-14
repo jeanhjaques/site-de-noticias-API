@@ -1,15 +1,26 @@
 <?php 
-include_once 'Cargo.php';
-include_once 'CargoDAO.php';
+include_once 'Editor.php';
+include_once 'EditorDAO.php';
+
 /*
-$novoCargo->setNome("Administrador");
-$novoCargo->setNivelAcesso("3");
+$novoEditor = new Editor();
 
 
-echo CargoDAO::create($novoCargo);
+$novoEditor->setNome("Jean");
+$novoEditor->setLogin("jeanhenrique7");
+$novoEditor->setSenha("senha123");
+$novoEditor->setIdcargo("1");
+
+EditorDAO::create($novoEditor);
+
+$novoEditor->setNome("Henrique");
+$novoEditor->setLogin("henrique1998");
+$novoEditor->setSenha("senha12345");
+$novoEditor->setIdcargo("1");
+
+EditorDAO::create($novoEditor);
 */
-
-$cargos = CargoDAO::read();
+$editores = EditorDAO::read();
 
 //Usando fectch Assoc
 /*
@@ -19,8 +30,9 @@ foreach($cargos as $cargo)
 */
 
 //Usando class
-$cargos = CargoDAO::read();
+foreach($editores as $editor){
+    echo $editor->getIdeditor().". ".$editor->getNome()." ".$editor->getLogin()." ".$editor->getSenha()." ".$editor->getIdcargo()."<br>";
+}
 
-foreach($cargos as $cargo)
-    echo $cargo->getIdCargo().". ".$cargo->getNome()." ".$cargo->getNivelAcesso()."<br>";
+
 ?>

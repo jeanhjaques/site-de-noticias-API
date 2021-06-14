@@ -3,7 +3,7 @@ class Cargo{
     //attributes
     private $idcargo;
     private $nome;
-    private $nivelAcesso;
+    private $nivelacesso;
 
     //getters e setters
     public function getIdcargo(){
@@ -22,11 +22,11 @@ class Cargo{
         $this->nome = $nome;
     }
 
-    public function getNivelAcesso(){
-        return $this->nivelAcesso;
+    public function getNivelacesso(){
+        return $this->nivelacesso;
     }
 
-    public function setNivelAcesso($nivelAcesso){
-        $this->nivelAcesso = $nivelAcesso;
+    public function setNivelacesso($nivelAcesso){
+        $this->nivelacesso = $nivelAcesso;
     }
 }

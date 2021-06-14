@@ -2,32 +2,32 @@
 
 class SubCategoria{
     //attributes
-    private $nomeSubCategoria;
-    private $idSubCategoria;
-    private $idCategoria;
+    private $nomesubcategoria;
+    private $idsubcategoria;
+    private $idcategoria;
 
     //getters and setters
-    public function getNomeSubCategoria(){
-        return $this->nomeSubCategoria;
+    public function getNomesubcategoria(){
+        return $this->nomesubcategoria;
     }
 
-    public function setNomeSubCategoria($nomeSubCategoria){
-        $this->nomeSubCategoria = $nomeSubCategoria;
+    public function setNomesubcategoria($nomeSubCategoria){
+        $this->nomesubcategoria = $nomeSubCategoria;
     }
 
-    public function getIdSubCategoria(){
-        return $this->idSubCategoria;
+    public function getIdsubcategoria(){
+        return $this->idsubcategoria;
     }
 
-    public function setIdSubCategoria($idSubCategoria){
-        $this->idSubCategoria = $idSubCategoria;
+    public function setIdsubcategoria($idsubcategoria){
+        $this->idsubcategoria = $idsubcategoria;
     }
 
-    public function getIdCategoria(){
-        return $this->idCategoria;  
+    public function getIdcategoria(){
+        return $this->idcategoria;
     }
 
-    public function setIdCategoria($idCategoria){
-        $this->idCategoria = $idCategoria;
+    public function setIdcategoria($idCategoria){
+        $this->idcategoria = $idCategoria;
     }
 }

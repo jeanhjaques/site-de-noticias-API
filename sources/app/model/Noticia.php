@@ -1,21 +1,21 @@
 <?php 
 class Noticia {
     //attributes
-    private $idNoticia;
+    private $idnoticia;
     private $titulo;
     private $subtitulo;
     private $data;
     private $conteudo;
-    private $dataUltimaAtualizacao;
-    private $idEditor;
+    private $dataultimaatualizacao;
+    private $ideditor;
 
     //getters e setters
-    public function getIdNoticia(){
-        return $this->noticia;
+    public function getIdnoticia(){
+        return $this->idnoticia;
     }
 
-    public function setIdNoticia($idNoticia){
-        $this->idNoticia = $idNoticia;
+    public function setIdnoticia($idNoticia){
+        $this->idnoticia = $idNoticia;
     }
 
     public function getTitulo(){
@@ -50,18 +50,18 @@ class Noticia {
         $this->conteudo = $conteudo;
     }
 
-    public function getDataUltimaAtualizacao(){
-        return $this->dataUltimaAtualizacao;
+    public function getDataultimaatualizacao(){
+        return $this->dataultimaatualizacao;
     }
 
-    public function setDataUltimaAtualização($dataUltimaAtualizacao){
-        $this->dataUltimaAtualizacao = $dataUltimaAtualizacao;
+    public function setDataultimaatualização($dataUltimaAtualizacao){
+        $this->dataultimaatualizacao = $dataUltimaAtualizacao;
     }
 
-    public function getIdEditor(){
-        return $this->idEditor;
+    public function getIdeditor(){
+        return $this->ideditor;
     }
-    public function setIdEditor($idEditor){
-        $this->idEditor = $idEditor;
+    public function setIdeditor($idEditor){
+        $this->ideditor = $idEditor;
     }
 }

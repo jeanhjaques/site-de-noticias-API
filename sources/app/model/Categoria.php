@@ -3,7 +3,7 @@ class Categoria
 {
     //attributes
     private $nome;
-    private $idCategoria;
+    private $idcategoria;
 
     //getters and setters
     public function getNome(){
@@ -14,11 +14,11 @@ class Categoria
         $this->nome = $nome;
     }
 
-    public function getIdCategoria(){
-        return $this->idCategoria;
+    public function getIdcategoria(){
+        return $this->idcategoria;
     }
 
-    public function setIdCategoria($idCategoria){
-        $this->idCategoria = $idCategoria;
+    public function setIdcategoria($idCategoria){
+        $this->idcategoria = $idCategoria;
     }
 }

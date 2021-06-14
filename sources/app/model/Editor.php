@@ -1,19 +1,19 @@
 <?php
 class Editor{
     //attributes
-    private $idEditor;
+    private $ideditor;
     private $nome;
     private $login;
     private $senha;
-    private $idCargo;
+    private $idcargo;
 
     //getters e setters
-    public function getIdEditor(){
-        return $this->idEditor;
+    public function getIdeditor(){
+        return $this->ideditor;
     }
 
     public function setIdEditor($idEditor){
-        $this->idEditor = $idEditor;
+        $this->ideditor = $idEditor;
     }
 
     public function getNome(){
@@ -40,12 +40,12 @@ class Editor{
         $this->senha = $senha;
     }
 
-    public function getIdCargo(){
-        return $this->idCargo;
+    public function getIdcargo(){
+        return $this->idcargo;
     }
-
-    public function setIdCargo($idCargo){
-        $this->idCargo = $idCargo;
+    
+    public function setIdcargo($idcargo){
+        $this->idcargo = $idcargo;
     }
     
 }
