@@ -57,4 +57,24 @@ class EditorDAO{
 
         $stmt->execute();
     }
+
+    //extras
+    public static function readById($id){
+        $sql = 'SELECT * FROM Editor WHERE ideditor = ?';
+
+        $stmt = Conexao::getConnect()->prepare($sql);
+
+        $stmt->bindValue(1, $id);
+
+        $stmt->execute();
+
+        if($stmt->rowCount()>0){
+            $stmt->setFetchMode(PDO::FETCH_CLASS, "Editor");
+            $obj = $stmt->fetch(); 
+            return $obj;
+        }
+        else {
+            return []; // retorna um array vazio caso não tenha nenhum item
+        }
+    }
 }
