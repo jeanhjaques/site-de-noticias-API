@@ -1,4 +1,8 @@
+CREATE DATABASE noticias;
+
 SET search_path TO noticiasschema;
+
+ALTER ROLE postgres SET search_path TO noticiasschema; /*substitua postgres pelo seu nome de usuário*/
 
 create table Categoria (
 	idCategoria serial PRIMARY KEY,
