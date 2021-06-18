@@ -41,14 +41,19 @@ class EditorController{
     public static function atualizarEditor($editor){
         $novoEditor = new Editor();
 
-        $novoEditor->setIdEditor($editor["id"]);
-        $novoEditor->setNome($editor["nome"]);
-        $novoEditor->setLogin($editor["login"]);
-        $novoEditor->setSenha(md5($editor["senha"]));
-        $novoEditor->setIdcargo($editor["cargo"]);
+        $novoEditor->setIdEditor($editor->id);
+        $novoEditor->setNome($editor->nome);
+        $novoEditor->setLogin($editor->login);
+        $novoEditor->setSenha(md5($editor->senha));
+        $novoEditor->setIdcargo($editor->cargo);
 
         EditorDAO::update($novoEditor);
 
+        return true;
+    }
+
+    public static function deleteEditor($id){
+        EditorDAO::delete($id);
         return true;
     }
 }

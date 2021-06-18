@@ -52,4 +52,22 @@ class SubcategoriaDAO{
 
         $stmt->execute();
     }
+
+    //extras
+    public static function readById($id){
+        $sql = "SELECT * FROM subcategoria";
+
+        $stmt = Conexao::getConnect()->prepare($sql);
+
+        $stmt->execute();
+
+        if($stmt->rowCount()>0){
+            $stmt->setFetchMode(PDO::FETCH_CLASS, "SubCategoria");
+            $obj = $stmt->fetchAll(); 
+            return $obj;
+        }
+        else {
+            return []; // retorna um array vazio caso não tenha nenhum item
+        }
+    }
 }

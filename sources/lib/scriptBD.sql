@@ -31,11 +31,11 @@ create table Editor (
 
 create table Noticia (
 	idNoticia serial PRIMARY KEY,
-	titulo varchar(45) NOT NULL,
-	subtitulo varchar(200),
-	data date NOT NULL,
+	titulo varchar(500) NOT NULL,
+	subtitulo varchar(1000),
+	data timestamp NOT NULL,
 	conteudo varchar(3000) NOT NULL,
-	dataUltimaAtualizacao date NOT NULL,
+	dataUltimaAtualizacao timestamp NOT NULL,
 	idEditor integer NOT NULL,
 	CONSTRAINT NoticiaEditorFK FOREIGN KEY(idEditor) REFERENCES Editor(idEditor)
 	ON DELETE set null ON UPDATE cascade

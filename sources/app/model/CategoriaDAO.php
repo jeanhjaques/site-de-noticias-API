@@ -4,7 +4,7 @@ include_once "Conexao.php";
 
 class CategoriaDAO{
     public static function create(Categoria $categoria){
-        $sql = 'INSET INTO categoria(nome) VALUES (?)';
+        $sql = 'INSERT INTO categoria (nome) VALUES (?)';
 
         $stmt = Conexao::getConnect()->prepare($sql);
 
@@ -47,6 +47,26 @@ class CategoriaDAO{
         $stmt->bindValue(1, $id);
 
         $stmt->execute();
+    }
+
+    //extras
+    public static function readById($id){
+        $sql = 'SELECT * FROM categoria WHERE idcategoria = ?';
+
+        $stmt = Conexao::getConnect()->prepare($sql);
+
+        $stmt->bindValue(1, $id);
+        
+        $stmt->execute();
+
+        if($stmt->rowCount()>0){
+            $stmt->setFetchMode(PDO::FETCH_CLASS, "Categoria");
+            $obj = $stmt->fetchAll(); 
+            return $obj;
+        }
+        else {
+            return []; // retorna um array vazio caso não tenha nenhum item
+        }
     }
 
 }

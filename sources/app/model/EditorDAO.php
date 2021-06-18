@@ -77,4 +77,22 @@ class EditorDAO{
             return []; // retorna um array vazio caso não tenha nenhum item
         }
     }
+
+    public static function login($login, $senha){
+        $sql = 'SELECT * FROM Editor WHERE login = ? AND senha = ?';
+
+        $stmt = Conexao::getConnect()->prepare($sql);
+
+        $stmt->bindValue(1, $login);
+        $stmt->bindValue(2, $senha);
+
+        $stmt->execute();
+
+        if($stmt->rowCount()>0){
+            return true; // retorna true se um user com essas caracteristicas existem
+        }
+        else {
+            return false; // retorna false se não existir usuário com essas características
+        }
+    }
 }
