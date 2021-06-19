@@ -9,3 +9,5 @@ Cada subcategoria pertence a uma categoria, sendo que uma notícia pode estar at
 Cada noticia deverá ser publicada por um editor. Um editor deve pertencer a algum cargo e poderá fazer alterações ou 
 publicações nas notícias de acordo com seu cargo, onde cada cargo possuí nível de acesso que varia de 1 a 3. Cada grau de nível de acesso representa
 a liberdade que editor tem para dar manutenção nas notícias, sendo o editor de cargo nível 1 o mais limitado e o de nível 3 o mais livre. 
+
+A descrição completa está disponível em: https://github.com/jeanhjaques/site-de-noticias-API/blob/master/documenta%C3%A7%C3%A3o/Site%20de%20Noticias.pdf
