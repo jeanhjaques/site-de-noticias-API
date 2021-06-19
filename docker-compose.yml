@@ -1,0 +1,26 @@
+version: '3.1'
+services:
+  apache:
+    build:
+        dockerfile: Dockerfile.dockerfile
+    image: 'php:5.6-apache'
+    container_name: php
+    restart: always
+    ports:
+       - '8080:80'
+    volumes:
+       - ./sources:/var/www/html
+       - ./config:/usr/local/etc/php
+    depends_on:
+       - db
+    links:
+       - db
+
+  db:
+    image: postgres:9.6.1
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=201619060485
+      - POSTGRES_DB=noticias
