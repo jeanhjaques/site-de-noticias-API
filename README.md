@@ -1,6 +1,6 @@
 Trabalho feito para a disciplina de Computação Distribuída
 
-[Projeto Ficticio]
+[Projeto Fictício]
 
 Site de Noticias
 
